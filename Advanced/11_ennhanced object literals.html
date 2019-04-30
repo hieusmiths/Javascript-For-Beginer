@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Enhanced</title>
+</head>
+<body>
+	Enhanced : tăng cường.
+	literals : chữ
+	<script>
+		// Object litterals ?? ->
+		// Constructor function
+		function Mouse(name){
+			this.name = name;
+		}
+		Mouse.prototype.run = function(){
+			console.log(`${this.name} Runing...`);
+		}
+		var mickey = new Mouse('MicKy');
+		mickey.run();
+		// Object literals lây rồ s
+		var jerry = {
+			name : 'jerry',
+			run : function(){
+				console.log(`${this.name} Running...`);
+			}
+		}
+		jerry.run();
+		// Enhanced Object literals
+		const name = "Tom";
+		var tom = {
+			name, // -> name : name 
+			run(){ //-> run : function(){}
+			console.log(`Hi ${this.name} enhanced`);
+			}
+		}
+		tom.run();
+	</script>
+</body>
+</html>

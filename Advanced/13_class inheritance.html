@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Class inheritance</title>
+</head>
+<body>
+	Inheritance : Sự thừa kế - di sản in hel tần s
+
+	<script>
+		class Animal{
+			constructor(name){
+				this.name = name;
+			}
+			eat(){
+				console.log('Eating....');
+			}
+		}
+		class Bird extends Animal{
+			fly(){
+				console.log('Flying....');
+			}
+		}
+		const birdOne = new Bird('Chim Bự');
+		birdOne.fly();
+		birdOne.eat();
+		console.log(birdOne.name);
+
+		//----
+		function People(name){
+			this.name = name;
+			this.ok = function(){
+				return this.name + ' OK';
+			}
+		}
+
+
+		People.prototype.eat = function(){
+			console.log('Eating....');
+		}
+		function Cat(){
+			People.apply(this, arguments);// this -> Cat \ inheritance function constructor of People
+		}
+		Cat.prototype = new People('Hieu');
+		const tom = new Cat('Tom Bự');
+		console.log(tom.name);
+		console.log(tom.ok());
+	</script>
+</body>
+</html>

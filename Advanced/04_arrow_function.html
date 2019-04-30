@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrow Function</title>
+</head>
+<body>
+	Can called it fat function.
+
+
+	<script>
+		function sum(a, b){ // declare function has name is sum
+			return a + b;
+		}
+		console.log(sum(4, 5));
+		var sumTwo = function(a, b){ // declare variable has value is function.
+			return a + b;
+		}
+		console.log(sumTwo(4, 5));
+		// About arrow function will write like a below
+		var sumThree = (a, b) =>{
+			return a + b;
+		}
+		console.log(sumThree(4, 5));
+		// if arrow function only has one parameter you can wirte
+		var sumFour = a => {
+			return  a * a;
+		}
+		// For function don't has parameter obligatory has () is default 
+		var  z = [1, 2, 3];
+		var o = z.map( y => y * y);
+		console.log(o);
+
+		// different between arrow function and normal function
+		var a = {
+		name : 'HIEU',
+		run  : function(){
+			// or var that = this;
+				var run2 = function(){
+					console.log(this.name + "  Name");
+				}.bind(this) // or .bind(a)
+		// can run2.bind(a)();
+		run2();
+		}
+	}
+	a.run();
+	// differences -> Những điểm khác biệt
+	// Riêng cái arrow function thì không có context;
+	var b = {
+		name : 'HIEU B',
+		run  : function(){
+			// run will is context of run2();
+				var run2 = ()=>{
+					console.log(this.name + "  Name");
+				}
+		run2();
+		}
+	}
+	b.run();
+	</script>
+</body>
+</html>

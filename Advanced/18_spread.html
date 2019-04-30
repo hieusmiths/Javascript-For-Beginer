@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>spread</title>
+</head>
+<body>
+	lan tràn
+
+	<script>
+		const a = [1, 2, 3];
+		const b = [0, ...a, 4];
+		console.log(b);
+		// rest will get all and convert it to array
+		// spread will unArray to elements.
+		function sum(...a){
+			console.log(a);
+		}
+		sum(...a);
+
+		// Clone
+		let c = {a : 2 , r : { v : 10 }};
+		let d = {...c}; // add by ...c, name:'hieu'
+		let d1 ={};
+		// tuy là clone khiến cho vị trí tham chiếu khác đi -> 2 object k ảnh hưởng tới nhau nhưng mà nếu có object lông trong object thì v vẫn ảnh hưởng (chỉ k ảnh hưởng 1 cấp) 
+		// do khai báo nên là nó ms k tham chiếu tới 1 vị trí bộ nhớ
+		// way normal
+		
+		for(let key in c){
+			d1[key] = c[key]; // d1[v] = c[v] => gán này thì ảnh hưởng
+		}
+		//-> d1 vs c sẽ khác nhau nhưng mà d1.v vs c.v nó vẫn bằng ...c cũng bị 
+		console.log(c===d);
+	</script>
+</body>
+</html>

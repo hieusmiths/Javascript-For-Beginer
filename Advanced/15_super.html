@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Super</title>
+</head>
+<body>
+	Using super in OOP of javascript.
+	enemy : kẻ thù
+
+	10
+	200 -= 
+	<script>
+		class Hero{ //-> Base Class
+			constructor(name, hp, damage){
+				this.name = name;
+				this.hp = hp;
+				this.damage = damage;
+			}
+			 applyDamage(damage){ //-> function applyDamage is false
+			 	console.log(this.hp);
+				this.hp -= damage;
+				
+			}
+
+			 attack(enemy){
+			 	console.log(this.damage);
+				enemy.applyDamage(this.damage); //- this.damage = 10
+			}
+		}
+		
+		const heroB = new Hero("B", 200, 5);
+		
+		class RangedHero extends Hero{ //-> Sub Class
+			constructor(name, hp, damage, range){
+				super(name, hp, damage);
+				this.range = range;
+			}
+			attack(enemy){
+				super.attack(enemy); //-> khác với Overriding
+				this.hp += this.damage;
+			}
+		}
+		const heroA = new RangedHero("A", 100, 10);
+		console.log({heroA, heroB});
+		heroA.attack(heroB);
+		console.log({heroA, heroB});
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Call</title>
+</head>
+<body>
+	
+	<script>
+		function greeting(name, age = 90){
+			console.log(`Hi ${name} : ${age}`);
+		}
+		greeting.call(null, 'hieu', 80);
+		// Call ->(1, 2) 1 is this if don't has write null.
+
+		function greetingTwo(){
+			console.log(`Hi ${this.name} : ${this.age} `);
+		}
+		var x = {
+			name : 'HIEU',
+			age  : 80
+		}
+		greetingTwo.call(x);
+	</script>
+</body>
+</html>

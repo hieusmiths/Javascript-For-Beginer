@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Apply</title>
+</head>
+<body>
+	Call : function.call(this, parmater-1, parmater-2, ...);
+	Aplly : function.apply(this, [parmater-1, parmater-2, ...]); // Object like Array.
+	<script type="text/javascript">
+		function greeting(){
+			console.log(`Hi ${ this.name } : ${ this.age }`);
+		}
+		var x = {
+			name : "MINH",
+			age : 18
+		}
+		greeting.apply(x);
+		// You using apply when paramter can't determined 
+	</script>
+</body>
+</html>

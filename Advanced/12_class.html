@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Class in the JS</title>
+</head>
+<body>
+	
+
+	<script>
+		// Syntax Constructor function born to look a like OOP.
+		class Mouse{
+			constructor(name){
+				this.name = name;
+			}
+			run(){
+				console.log(`Class js ${this.name }`);
+			}
+		}
+
+		const mouseOne = new Mouse('Hieu');
+		mouseOne.run();
+	</script>
+</body>
+</html>

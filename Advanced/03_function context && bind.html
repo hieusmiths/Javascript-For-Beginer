@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	bind : trói buộc ( bai )
+	global context : bối ảnh.
+	function context :
+	determined : Xác định ( đì tơ mần).
+	<button id="xx">Click</button>
+</body>
+
+<script>
+	var mouse = {
+		name : 'Mouse',
+		sayHi : function(){
+			console.log("Hi Hi my name'"+ 's ' + this.name);
+		}
+	}
+	mouse.sayHi(); //-- when you call method sayHi(), then mouse is context of sayHi();
+	var xyz = mouse.sayHi();
+	// Thing on mean xyz = functicon(){console.log("Hi Hi my name'"+ 's ' + this.name);}
+	// xyz can't determined this,name because now context of sayHi() default is window. -> this.name = underfined.
+	// To overcome bind borned.
+	var usingBind = mouse.sayHi.bind(mouse);
+	// or console.log(mouse.sayHi.bind(mouse)());
+	var cat = {
+		name : 'thằng mều'
+	};
+	var usingBindTwo = mouse.sayHi.bind(cat);
+	usingBind();
+	usingBindTwo();
+	const xxx = document.getElementById('xx');
+	xxx.addEventListener('click', mouse.sayHi); // -> mouse.sayHi = function(){console.log("Hi Hi my name'"+ 's ' + this.name); but don't determined context then bind context dafault for it.
+	// xxx.addEventListener('click', mouse.sayHi.bind(mouse)); -> OK
+	// xxx.addEventListener('click', mouse.sayHi()); -> OK
+	
+</script>
+</html>

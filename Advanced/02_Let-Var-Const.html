@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+Portfolios : Danh mục đầu tư
+Architecture : kiến trúc sư
+	<script>
+		var a = 1;
+		let b = 2;
+		// for function -> đối với hàm.
+		const c = 3;
+		var a = 5; // In languages programing another this never happen.
+		// To Overcome thing on we using let. let b = 5; -> fasle let don't allow declare more one 1 times.
+		// Const stand for constant you will using it when you ensure value of variable never change.
+		// 1 times : 1 lần.
+		// Overcome : khắc phục
+		// Recommed : ri còm
+		// incurred : phát sinh in cơ rịt
+		// Thing on : điều trên.
+		// Obligatory : Bắt buộc - o bờ lai gây to ry.
+		// Const also (ó sầu) has property like a let
+		// Another declare let and var while you daclare avarible with Const you must obligatory
+		console.log(a, b, c); // => a = 5
+		// when you has function name is Run() and using variable before daclare this function will resturn underfined if type of variable is var
+		// for function Run() you using it before daclare and type of it is let function can't run.
+		// about const, it has effect like a most when you daclare variable with let.
+		// Using var your code will inncurred Hoisting. To overcome it recommed using declare variable by let and const.
+
+
+		// Var has function scope -> bài 48 js basic
+
+		// Let and Const don't has function scope only has Block Scope.
+		// Recap -> tom tắt
+		// var is function scope.
+		// let and const are block scope.
+		// Function scope is within the function.
+		// Block scope is within curly brackets. (dấu ngoặc nhọn)
+		// Scope is everything within brackets.
+		if(true){
+			var x = 10;
+		}
+		console.log(x);// -> 10 cause thing on don't must is function to incurred Function Scope.
+		// To Overcome thing on , you must using variable has property has Block Scope is let and const.
+		if(true){
+			let y = 10;
+		}
+		// or
+		{
+			const v = 30;
+		}
+		console.log(v); // -> error.
+		console.log(y); // -> error.
+		// while coding developer will limit scope of variables to improve and increase performance of programing.
+		
+	</script>
+</body>
+</html>

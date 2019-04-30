@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hoisting</title>
+</head>
+<body>
+	
+
+	<script>
+		var x = 5;
+		function Run(){
+			var x = 10; //-> x = 10
+			console.log(x);
+			var x = 10; //-> underfine
+		}
+		Run();
+	</script>
+</body>
+</html>

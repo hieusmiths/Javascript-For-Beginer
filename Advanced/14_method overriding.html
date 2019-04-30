@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>method overriding</title>
+</head>
+<body>
+	ghi đè method.
+
+	<script>
+		class CoffeMachince{
+			makeCoffe(){
+				console.log('Making...');
+			}
+		}
+		class SpecialCoffeMachince extends CoffeMachince{
+			makeCoffe(cb){ //-> When call to overriding method.
+				console.log('Making... And add Sugar');
+				cb();
+			}
+		}
+		const coffeeSpecial = new SpecialCoffeMachince();
+		coffeeSpecial.makeCoffe(function(){
+			console.log("Make For Boss");
+		}); //-> 
+	</script>
+</body>
+</html>

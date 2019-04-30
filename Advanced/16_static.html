@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Static</title>
+</head>
+<body>
+	<script>
+		// Difference between static and normal method
+		// instance is one Object created by Any Class.
+		class Foo{
+			static someThing(){
+				console.log('OK');
+			}
+			toDo(){
+				console.log("NO");
+			}
+		}
+		Foo.someThing(); // Không cần khởi tạo new Foo
+		
+	</script>
+</body>
+</html>

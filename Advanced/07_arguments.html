@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arguments</title>
+</head>
+<body>
+
+	Object like a array has key is index of array and obligatory lenght.
+	differents is don't has methods : map , reduce , ...
+	var x = {
+	0 : 'thanh',
+	1 : 'hieu',
+	2 : 'minh',
+	lenght : 3
+}
+	<script>
+		// Suppose : giả sử. sư pầu
+		// Scrimp : keo kiệt
+		// おめでとうございます -- xin chúc mừng
+		// Suppose you wana count of many numbers but you don't want tranmission in many paramter.
+		// Ok you can using arguments  ->
+		function sum(){
+			console.log(arguments); // -> Object Like Array. tránh sử dụng for in nhầm array k là xuất hiện loop
+			let result = 0;
+			for (let i =0 ; i < arguments.length ; i++){
+				result += arguments[i]; // Nan is fail because i<= length 
+			}
+			return result;
+			// or you can convert arguments to array
+			const numbers = Array.from(arguments);
+			return numbers.reduce(function(sum, num){
+				return sum + num;
+			}, 0)
+		}
+		console.log(sum(1, 4, 5));
+	</script>	
+</body>
+</html>

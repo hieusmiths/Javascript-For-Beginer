@@ -1,0 +1,20 @@
+<script>
+	// garbage collector
+	// hàm chạy xong thì clear đi những thứ đã xong
+	function sum(a, b){
+		const c = a + b; // máy sẽ khởi tạo bộ nhớ chứa C
+		return function(){
+			console.log(c);
+		}
+	}
+	sum(1, 3)(); // nào mà chạy hàm xong thì mới clear c -> sum return về 1 function nên phải ()
+
+	function debug(name){
+		return function(str){
+			console.log(`[${name}]  ${str}`);
+		}
+	}
+	const log = debug('HIEU'); // tranmission name
+	// log = function(){}
+	log('HIHI'); // call function and tranmission paramater in 
+</script>
